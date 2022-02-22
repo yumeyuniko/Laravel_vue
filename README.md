@@ -12,3 +12,8 @@ UPDATEできた
 
 
 <img src="./update_fixed.gif" width=80%>
+
+DELETEできた
+
+<img src="./delete.gif" width=80%>
+

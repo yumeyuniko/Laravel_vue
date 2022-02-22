@@ -17,7 +17,12 @@
             >
               Update
             </button>
-            <button class="button button-small button-alert">Delete</button>
+            <button
+              class="button button-small button-alert"
+              @click="() => deleteUser(user.id)"
+            >
+              Delete
+            </button>
           </div>
         </div>
       </div>
@@ -29,10 +34,23 @@
 </template>
 
 <script>
-// import APIController from "@/controllers/api";
+import APIController from "@/controllers/api";
 
 export default {
   props: ["users", "fetchUsers", "toggleForm"],
+  setup(props) {
+    const deleteUser = async (id) => {
+      const success = await APIController.DeleteUser(id);
+
+      if (success) {
+        props.fetchUsers();
+      }
+    };
+
+    return {
+      deleteUser,
+    };
+  },
 };
 </script>
 
