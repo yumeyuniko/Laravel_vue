@@ -85,7 +85,7 @@ Route::get("/users/{id}", function (Request $request, $id) {
     return [
         "success" => true,
         "response" => [
-            "users" => $user
+            "user" => $user
         ]
     ];
 });
